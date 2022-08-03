@@ -7,3 +7,13 @@ Changelog 01
 #on the startup the user is required to  set a one-time key for hashing. # it will be called a "Primary Hash"
 a key is a piece of text or credential used to decrypt the hased password.
 The primary key will be required everytime to add,generate and read stored passwords.
+
+# the program will be a standalone php file , the file will contain the php script, Html & Css all inside a single File.
+
+the encrypte hash will be stored in a seperate file in the same directory.
+
+Following files will be made-
+1.PasswordMan.php
+2.Enc_Data(file, will be generated automatically by script)
+
+The file will be self dependent means it will not need any king of PHP server like Apache or Ngnix etc.
