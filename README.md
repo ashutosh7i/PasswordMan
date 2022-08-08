@@ -17,3 +17,12 @@ Following files will be made-
 2.Enc_Data(file, will be generated automatically by script)
 
 The file will be self dependent means it will not need any king of PHP server like Apache or Ngnix etc.
+
+workflow
+start
+on the first run ask user to make a key.
+create a menu with following options
+sr No-----------Account id------Password---------Last Changed
+auto            name of         pwd generated    Date()
+increment       Profile         hashed with key
+[New Passowrd]
