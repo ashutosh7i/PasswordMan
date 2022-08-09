@@ -88,13 +88,15 @@
 
 $filename = "Data.txt";
 if (file_exists($filename)){
-    echo "Data File exist.";
+    //echo "Data File exist.";
+    echo '<script>alert("Data File exists")</script>';
     //reading and showing file contents
 echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
 
 }
 
-else{
+else{echo '<script>alert("File does not exist. Creating One")</script>';
+    
     echo "File does not exist. Creating One";
 
     //will make a popup window to take key as input

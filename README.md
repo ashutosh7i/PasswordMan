@@ -30,3 +30,6 @@ increment       Profile         hashed with key
 date 09/08/22
 removed Version2.php , already used essentials from it.
 modified script to add website,account name and Hashed passowrd to data.txt file
+
+Implement use of browser alerts from phppopup.php script
+alerts will be used to show if file exists, its creation and contents of file.
