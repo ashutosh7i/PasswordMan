@@ -26,3 +26,7 @@ sr No-----------Account id------Password---------Last Changed
 auto            name of         pwd generated    Date()
 increment       Profile         hashed with key
 [New Passowrd]
+
+date 09/08/22
+removed Version2.php , already used essentials from it.
+modified script to add website,account name and Hashed passowrd to data.txt file

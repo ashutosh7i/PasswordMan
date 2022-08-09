@@ -1,4 +1,4 @@
-//this is the main file for PassowrdMan.php This file will  contain everything necessary for the proper functioning of Script
+<!--this is the main file for PassowrdMan.php This file will  contain everything necessary for the proper functioning of Script-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,6 +62,8 @@
             My HTML Form
         </div>
         <form class="blogdesire-form" method="post">
+            <!--Input Fields-->
+            <input type="text" name="website" placeholder="Website" required autocomplete="off"> <br>
             <input type="text" name="username" placeholder="Username" required autocomplete="off"> <br>
             <input type="password" name="password" placeholder="Password" required autocomplete="off"> <br>
             <input type="submit" name="submit" value="SAVE" class="blogdesire-submit">
@@ -76,60 +78,26 @@
 
 </html>
 
+<!--Php script here-->
 
 <?php
-              
-if(isset($_POST['username']))
-{
-$username=$_POST['username'];
-$password=$_POST['password'];
 
-$fp = fopen('data.txt', 'a');
-
-fwrite($fp, $username.$password);
-fclose($fp);
-}
-?>
-
-
-
-
-
-
-<?php
-if(isset($_POST['submit'])){
-$Name = "Username:".$_POST['username']."
-";
-$Pass = "Password:".$_POST['password']."
-";
-$file=fopen("saved.txt", "a");
-fwrite($file, $Name);
-fwrite($file, $Pass);
-fclose($file);
-}
-?>
-
-/*
-// will create the file if not exist, will open if exists
+//will create the file if not exist, will open if exists
 
 //checks if file exists if not then creates one
+
 $filename = "Data.txt";
 if (file_exists($filename)){
     echo "Data File exist.";
-
-    //reading and showing hash
+    //reading and showing file contents
 echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
 
 }
 
-
-
 else{
     echo "File does not exist. Creating One";
 
-    //use form to take the key from user at start,store it in $key variable
-
-
+    //will make a popup window to take key as input
     $Data_file = fopen("Data.txt", "w") or die("Unable to create/open file!");
 
 fclose($Data_file);
@@ -138,6 +106,20 @@ fclose($Data_file);
 //$key="From user";
 //fwrite($Data_file, $key);
 
+//script to input new data from user to data.txt
+if(isset($_POST['submit'])){
+    $Website = "Website:".$_POST['website']."
+    ";
+    $Name = "Username:".$_POST['username']."
+    ";
+    $Pass = "Password:".$_POST['password']."
+    ";
+    $file=fopen("Data.txt", "a");
+    fwrite($file, $Website);
+    fwrite($file, $Name);
+    fwrite($file, $Pass);
+    fclose($file);
+    }
+    
 
 ?>
-*/
