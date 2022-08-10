@@ -1,8 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<title>Test</title>
-<script src="http://code.jquery.com/jquery.js"></script>
+
 <script type="text/javascript">
 $(function() {
   // CODE TO CLOSE THE POPUP

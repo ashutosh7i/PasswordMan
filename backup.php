@@ -47,81 +47,6 @@
             color: #fff;
             width: 20%;
         }
-        * {
-        box-sizing: border-box;
-    }
-    
-    .openBtn {
-        display: flex;
-        justify-content: left;
-    }
-    
-    .openButton {
-        border: none;
-        border-radius: 5px;
-        background-color: #1c87c9;
-        color: white;
-        padding: 14px 20px;
-        cursor: pointer;
-        position: fixed;
-    }
-    
-    .loginPopup {
-        position: relative;
-        text-align: center;
-        width: 100%;
-    }
-    
-    .formPopup {
-        display: none;
-        position: fixed;
-        left: 45%;
-        top: 5%;
-        transform: translate(-50%, 5%);
-        border: 3px solid #999999;
-        z-index: 9;
-    }
-    
-    .formContainer {
-        max-width: 300px;
-        padding: 20px;
-        background-color: #fff;
-    }
-    
-    .formContainer input[type=text],
-    .formContainer input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 20px 0;
-        border: none;
-        background: #eee;
-    }
-    
-    .formContainer input[type=text]:focus,
-    .formContainer input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-    
-    .formContainer .btn {
-        padding: 12px 20px;
-        border: none;
-        background-color: #8ebf42;
-        color: #fff;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom: 15px;
-        opacity: 0.8;
-    }
-    
-    .formContainer .cancel {
-        background-color: #cc0000;
-    }
-    
-    .formContainer .btn:hover,
-    .openButton:hover {
-        opacity: 1;
-    }
     </style>
 
     <meta charset="UTF-8">
@@ -144,39 +69,6 @@
             <input type="submit" name="submit" value="SAVE" class="blogdesire-submit">
         </form>
     </div>
-
-    
-<div class="openBtn">
-    <button class="openButton" onclick="openForm()"><strong>Decrypt Passwords</strong></button>
-</div>
-<div class="loginPopup">
-    <div class="formPopup" id="popupForm">
-        <form action="decrypt.php" class="formContainer">
-            <h2>Enter Your Key</h2>
-            <label for="key">
-            <strong>Decryption Key-</strong>
-          </label>
-            <input type="password" id="key" placeholder="Your Key" name="key" required>
-            <button type="submit" class="btn" onclick="test()">Decrypt</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-</div>
-<script>
-    function test() {
-
-        alert(`The function 'test' is executed`);
-    }
-
-    function openForm() {
-        document.getElementById("popupForm").style.display = "block";
-    }
-
-    function closeForm() {
-        document.getElementById("popupForm").style.display = "none";
-    }
-</script>
-
 
 
 
@@ -250,11 +142,9 @@ echo "Encrypted String: " . $encryption . "\n";
 
 ?>
 
-<?php
+
 $decryption = openssl_decrypt($encryption, $ciphering,$key, $options, $encryption_iv);
 echo "Decrypted String: " . $decryption . "\n";
-
-?>
 
 
 

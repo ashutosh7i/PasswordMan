@@ -33,3 +33,13 @@ modified script to add website,account name and Hashed passowrd to data.txt file
 
 Implement use of browser alerts from phppopup.php script
 alerts will be used to show if file exists, its creation and contents of file.
+
+based on the encryption techniques used in encdec.php , the further code of passwordman.php will use encryption to store all the passwords in data.txt file
+one only thing visible will be the website name and the user name and password will be encrypted with the help on initialization vector which will be the name of that website
+
+-&&- will be used to seperate website name and the encrypted hash
+there will be a button on the homepage, which when clicked call a function that will decrypt all passwords and present them in a html alert box
+
+takes key everytime saving a new password
+
+added decrypted button, when pressed it will make a popup for user to enter the key
