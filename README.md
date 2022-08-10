@@ -43,3 +43,8 @@ there will be a button on the homepage, which when clicked call a function that 
 takes key everytime saving a new password
 
 added decrypted button, when pressed it will make a popup for user to enter the key
+
+10/08/22 commit
+added a decrypt.php page , when decypt button is pressed and correct key entered the page will redirect to a new page showing the decrypted  Passwords🎉🥳.
+
+this currently works file if data.txt only contains a single encrypted hash but fails if there are more than one hash , there is need to fix the openssl_decrypt function rest is working as expected

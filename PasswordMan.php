@@ -151,7 +151,7 @@
 </div>
 <div class="loginPopup">
     <div class="formPopup" id="popupForm">
-        <form action="decrypt.php" class="formContainer">
+        <form action="decrypt.php" class="formContainer" method="post">
             <h2>Enter Your Key</h2>
             <label for="key">
             <strong>Decryption Key-</strong>
@@ -197,7 +197,7 @@ error_reporting(0);
 $filename = "Data.txt";
 if (file_exists($filename)){
     //echo "Data File exist.";
-    echo '<script>alert("Data File exists")</script>';
+    //echo '<script>alert("Data File exists")</script>';
     //reading and showing file contents
 echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
 
@@ -250,11 +250,7 @@ echo "Encrypted String: " . $encryption . "\n";
 
 ?>
 
-<?php
-$decryption = openssl_decrypt($encryption, $ciphering,$key, $options, $encryption_iv);
-echo "Decrypted String: " . $decryption . "\n";
 
-?>
 
 
 
