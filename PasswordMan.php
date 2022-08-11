@@ -163,10 +163,10 @@
     </div>
 </div>
 <script>
-    function test() {
+   // function test() {
 
-        alert(`The function 'test' is executed`);
-    }
+   //     alert(`The function 'test' is executed`);
+   // }
 
     function openForm() {
         document.getElementById("popupForm").style.display = "block";
@@ -193,7 +193,7 @@ error_reporting(0);
 //will create the file if not exist, will open if exists
 
 //checks if file exists if not then creates one
-
+echo nl2br("\n\n");
 $filename = "Data.txt";
 if (file_exists($filename)){
     //echo "Data File exist.";

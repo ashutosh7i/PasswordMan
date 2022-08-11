@@ -9,7 +9,6 @@ echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it ou
 
 echo nl2br("\n\n");
 $data=file_get_contents( "Data.txt" );
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
     $key = $_POST['key'];
@@ -25,10 +24,10 @@ $ciphering="aria-256-ctr";
 $options=0;
 
 
-
-$lines = explode(PHP_EOL, $data);
+$lines = explode("\n", $data);
 foreach($lines as $line){
     $parsed=explode('-&&-', $line);
+    echo nl2br("\n");
     echo(openssl_decrypt($parsed[1],$ciphering,$key,$options,$parsed[0]));
 }
 
