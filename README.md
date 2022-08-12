@@ -53,3 +53,8 @@ this currently works file if data.txt only contains a single encrypted hash but 
 the single line&multiline problem was solved by simply replacing PHP_EOL with "/n" in decrypt.php 
 
 now the  file works as intended🥳🎉🔥.
+
+TODO 12/08/22
+1.add a generate random button besides the password tab in PasswordMan.php homepage.
+when pressed this button should type a randomly generated highly secure password.
+2 cosmetic changes in PasswordmMan.php 
