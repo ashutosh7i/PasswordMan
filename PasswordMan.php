@@ -47,6 +47,8 @@
             color: #fff;
             width: 20%;
         }
+
+
         * {
         box-sizing: border-box;
     }
@@ -122,28 +124,67 @@
     .openButton:hover {
         opacity: 1;
     }
-    </style>
 
+    #suggestion{
+        color: #cc0000;
+    }
+
+    .blogdesire-password{
+            position: relative;
+            
+        display: flex;
+            width: 80%;
+            border: 1px solid #6944ff;
+            color: #6944ff;
+            padding: 2%;
+            border-radius: 20px;
+            margin-top: 15px;
+            margin-right: 1px;
+  margin-bottom: 15px;
+            font-family: 'Grenze', serif;
+    }
+
+    a{
+        
+        position: relative;
+        display: flex;
+        Justify-content: center;
+        background: #6944ff;
+            color: #fff;
+            width: 14%;
+            padding: 2%;
+            border-radius: 20px;  
+  margin-top: -64px;
+  margin-right: 1px;
+  margin-bottom: 15px;
+  margin-left: 550px;
+            font-family: 'Grenze', serif;
+    
+    }
+    
+
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>My HTML Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>PasswordMan -A php based Passowrd Manager</title>
 </head>
 
 <body class="blogdesire-body">
     <div class="blogdesire-wrapper">
         <div class="blogdesire-heading">
-            My HTML Form
+            PasswordMan 
         </div>
-        <form class="blogdesire-form" method="post">
+        <form method="post">
             <!--Input Fields-->
-            <input type="text" name="website" placeholder="Website" required autocomplete="off"> <br>
-            <input type="text" name="username" placeholder="Username" required autocomplete="off"> <br>
-            <input type="password" name="password" placeholder="Password" required autocomplete="off"> <br>
-            <input type="submit" name="submit" value="SAVE" class="blogdesire-submit">
+            <span class="blogdesire-form"><input type="text" name="website" placeholder="Website" required autocomplete="off"><br></span>
+            <span class="blogdesire-form"><input type="text" name="username" placeholder="Username" required autocomplete="off"><br></span>
+            <span class="blogdesire-password"><input type="text" name="password" placeholder="Password" required autocomplete="off"><br></span>
+            <span id="suggestion"></span><a><input type="button" value="Generate" onclick="_RandomPassword(17)" > <br></a>
+           <span class="blogdesire-form"><input type="submit" name="submit" value="SAVE"></span>
         </form>
-    </div>
+        </div> 
 
     
 <div class="openBtn">
@@ -163,10 +204,18 @@
     </div>
 </div>
 <script>
-   // function test() {
+  function redir() {
+    window.location.reload();
+  }
 
-   //     alert(`The function 'test' is executed`);
-   // }
+   function _RandomPassword(len) {
+  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$&*+_?%",
+      suggestion = "";
+  for(let i = 0; i < len; i++) suggestion += chars.split("").sort((a, b) => Math.round(Math.random()*a.charCodeAt()) - Math.round(Math.random()*b.charCodeAt())).splice(-1).join("");
+    
+  //document.querySelector("#suggestion").textContent = suggestion;
+  document.querySelector("[name='password']").value = suggestion;
+}
 
     function openForm() {
         document.getElementById("popupForm").style.display = "block";
@@ -189,6 +238,7 @@
 <!--Php script here-->
 
 <?php
+
 error_reporting(0);
 //will create the file if not exist, will open if exists
 
@@ -196,10 +246,10 @@ error_reporting(0);
 echo nl2br("\n\n");
 $filename = "Data.txt";
 if (file_exists($filename)){
-    //echo "Data File exist.";
+    echo "Data File exist.";
     //echo '<script>alert("Data File exists")</script>';
     //reading and showing file contents
-echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
+//echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
 
 }
 
@@ -246,7 +296,18 @@ echo "Encrypted String: " . $encryption . "\n";
     fwrite($file, $encryption);
     fwrite($file, "\n");//additional newline 
     fclose($file);
+
+    echo '<script type="text/javascript">',
+     'window.location.href = "saved.php";',
+     '</script>'
+;
+
     }
+
+
+
+
+
 
 ?>
 

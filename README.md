@@ -54,7 +54,20 @@ the single line&multiline problem was solved by simply replacing PHP_EOL with "/
 
 now the  file works as intended🥳🎉🔥.
 
-TODO 12/08/22
+TODO 12/08/22 - 11:30AM
 1.add a generate random button besides the password tab in PasswordMan.php homepage.
 when pressed this button should type a randomly generated highly secure password.
 2 cosmetic changes in PasswordmMan.php 
+
+DONE 12/08/22 - 10:21PM
+
+added a button besides password input field in form,
+when pressed the button generates a passowrd, shows the password and then types the password in the box. 
+button uses javascript function to generate and store.
+The save process works as usual, overall generate function is completed.
+🥳
+
+as of 13-08-2022 1:20pm done many changes to site.
+1. implemented PRG ( Post/Redirect/Get) methodology , now upon form submission , user gets redirected to saved.php page where he can see list of all stored passowrds;from the same page he can enter his key and get his keys decrypted.
+2. on the passwordman.php, it no longer shows list of stored hash, it only shows the status related to data.txt file , and now list of stored hashes can be seen on saved.php
+3. generate button function as intended and positioned relatively, more work on css
