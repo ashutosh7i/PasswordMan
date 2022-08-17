@@ -4,7 +4,6 @@
 
 <head>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Grenze&display=swap');
         .blogdesire-body {
             background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
             background-repeat: no-repeat;
@@ -29,8 +28,6 @@
             font-size: 30px;
             color: #6944ff;
         }
-        
-        .blogdesire-form {}
         
         .blogdesire-form input {
             width: 96%;
@@ -162,7 +159,6 @@
     
     }
     
-
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -190,6 +186,7 @@
 <div class="openBtn">
     <button class="openButton" onclick="openForm()"><strong>Decrypt Passwords</strong></button>
 </div>
+
 <div class="loginPopup">
     <div class="formPopup" id="popupForm">
         <form action="decrypt.php" class="formContainer" method="post">
@@ -203,19 +200,20 @@
         </form>
     </div>
 </div>
+
+
 <script>
   function redir() {
     window.location.reload();
   }
 
    function _RandomPassword(len) {
-  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$&*+_?%",
-      suggestion = "";
-  for(let i = 0; i < len; i++) suggestion += chars.split("").sort((a, b) => Math.round(Math.random()*a.charCodeAt()) - Math.round(Math.random()*b.charCodeAt())).splice(-1).join("");
-    
-  //document.querySelector("#suggestion").textContent = suggestion;
-  document.querySelector("[name='password']").value = suggestion;
-}
+    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$&*+_?%",
+    suggestion = "";
+    for(let i = 0; i < len; i++) suggestion += chars.split("").sort((a, b) => Math.round(Math.random()*a.charCodeAt()) - Math.round(Math.random()*b.charCodeAt())).splice(-1).join("");
+    //document.querySelector("#suggestion").textContent = suggestion;
+    document.querySelector("[name='password']").value = suggestion;
+    }
 
     function openForm() {
         document.getElementById("popupForm").style.display = "block";
@@ -225,44 +223,36 @@
         document.getElementById("popupForm").style.display = "none";
     }
 </script>
-
-
-
-
-    </form>
-
 </body>
-
 </html>
+
 
 <!--Php script here-->
 
 <?php
-
 error_reporting(0);
 //will create the file if not exist, will open if exists
 
 //checks if file exists if not then creates one
-echo nl2br("\n\n");
+echo nl2br("\n\n\n");
 $filename = "Data.txt";
 if (file_exists($filename)){
     echo "Data File exist.";
     //echo '<script>alert("Data File exists")</script>';
     //reading and showing file contents
-//echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
+    //echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it out.
 
 }
 
-else{echo '<script>alert("File does not exist. Creating One")</script>';
-    
+else{
+    echo '<script>alert("File does not exist. Creating One")</script>';
     echo "File does not exist. Creating One";
-
     //will make a popup window to take key as input
     $Data_file = fopen("Data.txt", "w") or die("Unable to create/open file!");
+    fclose($Data_file);
+    }
 
-fclose($Data_file);
-}
-
+    //to take key from at time of encrypting new password
 $key="1234567890";
 
 $Website =$_POST['website'];
@@ -270,10 +260,11 @@ $Name =$_POST['username'];
 $Pass =$_POST['password'];
 //fwrite($Data_file, $key);
 
-//script to input new data from user to data.txt
-if(isset($_POST['submit'])){
 
-    
+
+//script to input new data from user to data.txt
+if(isset($_POST['submit'])){ //when use presses submit
+
 //now the encryption part
 //the username and password will be encrypted and will be stored in data.txt
 //to decrypt, the key from user will be used and the account name will be used as initiation vector
@@ -288,8 +279,6 @@ $encryption_iv=$Website;
 $encryption = openssl_encrypt($data, $ciphering,$key, $options, $encryption_iv);
 echo "Encrypted String: " . $encryption . "\n";
 
-
-
     $file=fopen("Data.txt", "a");
     fwrite($file, $Website);
     fwrite($file, "-&&-");//to seperate website and encrypted data
@@ -297,18 +286,14 @@ echo "Encrypted String: " . $encryption . "\n";
     fwrite($file, "\n");//additional newline 
     fclose($file);
 
+//afte successful generation of file redirect to saved.php
+//this prevents reupload of data on reload, since we are using PRG method.
     echo '<script type="text/javascript">',
      'window.location.href = "saved.php";',
-     '</script>'
-;
-
+     '</script>';
     }
 
-
-
-
-
-
+    
 ?>
 
 

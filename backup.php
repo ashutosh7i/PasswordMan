@@ -4,7 +4,6 @@
 
 <head>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Grenze&display=swap');
         .blogdesire-body {
             background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
             background-repeat: no-repeat;
@@ -29,8 +28,6 @@
             font-size: 30px;
             color: #6944ff;
         }
-        
-        .blogdesire-form {}
         
         .blogdesire-form input {
             width: 96%;

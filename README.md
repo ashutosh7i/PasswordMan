@@ -71,3 +71,10 @@ as of 13-08-2022 1:20pm done many changes to site.
 1. implemented PRG ( Post/Redirect/Get) methodology , now upon form submission , user gets redirected to saved.php page where he can see list of all stored passowrds;from the same page he can enter his key and get his keys decrypted.
 2. on the passwordman.php, it no longer shows list of stored hash, it only shows the status related to data.txt file , and now list of stored hashes can be seen on saved.php
 3. generate button function as intended and positioned relatively, more work on css
+
+completed another project , now working again on this project.
+1. added .gitignore and configured it.
+2. Structured and reviewed the code of all pages.
+3. added close page button to saved.php, will redirect to home page.
+4. added close page button to decrypt.php,will redirect to home page.
+5. added decryption tap to saved.php so user can decrypt from there as well.
