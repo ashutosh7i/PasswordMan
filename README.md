@@ -23,7 +23,7 @@ Test a live deployed Version [here](https://replit.com/@Ashutosh7i/PasswordMan?v
 
 # Flow Chart:-
 
-<img src=":/f0e087e7292d4c3b8820b29c75d61fc6" alt="flow.png" width="693" height="390" class="jop-noMdConv">
+<img src="https://github.com/ashutosh7i/PasswordMan/blob/main/documentation/flow.png?raw=true" alt="flow.png" width="500" height="300" class="jop-noMdConv">
 
 # Upgradability:-
 
