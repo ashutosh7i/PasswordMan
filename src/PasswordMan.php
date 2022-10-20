@@ -101,6 +101,10 @@
         background-color: #ddd;
         outline: none;
     }
+    .password{
+          display: flex;
+  justify-content: space-between;
+    }
     
     .formContainer .btn {
         padding: 12px 20px;
@@ -147,15 +151,13 @@
         display: flex;
         Justify-content: center;
         background: #6944ff;
-            color: #fff;
-            width: 14%;
-            padding: 2%;
-            border-radius: 20px;  
-  margin-top: -64px;
-  margin-right: 1px;
-  margin-bottom: 15px;
-  margin-left: 550px;
-            font-family: 'Grenze', serif;
+        color: #fff;
+        width: 100px;
+        height:50px;
+        padding: 2%;
+        margin:auto;
+        border-radius: 20px; 
+        font-family: 'Grenze', serif;
     
     }
     
@@ -176,8 +178,10 @@
             <!--Input Fields-->
             <span class="blogdesire-form"><input type="text" name="website" placeholder="Website" required autocomplete="off"><br></span>
             <span class="blogdesire-form"><input type="text" name="username" placeholder="Username" required autocomplete="off"><br></span>
-            <span class="blogdesire-password"><input type="text" name="password" placeholder="Password" required autocomplete="off"><br></span>
+            <span class="password">
+                <span class="blogdesire-password"><input type="text" name="password" placeholder="Password" required autocomplete="off"><br></span>
             <span id="suggestion"></span><a><input type="button" value="Generate" onclick="_RandomPassword(17)" > <br></a>
+            </span>
            <span class="blogdesire-form"><input type="submit" name="submit" value="SAVE"></span>
         </form>
         </div> 
