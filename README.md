@@ -9,7 +9,7 @@ The user has to set a Key, this key is used for encrypting new passwords as well
 Password Man makes it easy to get all passwords by simply remembering the key,
 Hence making life easier.
 Using Google for Saving passwords is fine, But if you believe in Privacy, then
-A Password Manager is must.
+A Password Manager is must. 
 
 # Usage:-
 
