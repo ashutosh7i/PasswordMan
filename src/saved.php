@@ -197,7 +197,7 @@ echo nl2br(file_get_contents( "Data.txt" )); // get the contents, and echo it ou
 
 <div class="formContainer">
 <div class="close-button">
-<form action="PasswordMan.php" method="post">
+<form action="index.php" method="post">
             <input class="btn cancel" type="submit" value="Close" />
         </form>
 </div>
