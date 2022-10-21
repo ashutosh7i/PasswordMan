@@ -1,6 +1,4 @@
-# PasswordMan:- [![Create Release](https://github.com/ashutosh7i/PasswordMan/actions/workflows/PasswordMan_autoRelease.yml/badge.svg?event=release)](https://github.com/ashutosh7i/PasswordMan/actions/workflows/PasswordMan_autoRelease.yml)
-
-[![Create Release](https://github.com/ashutosh7i/PasswordMan/actions/workflows/PasswordMan_autoRelease.yml/badge.svg?event=push)](https://github.com/ashutosh7i/PasswordMan/actions/workflows/PasswordMan_autoRelease.yml)
+# PasswordMan:- 
 ##### Password Man is a PHP based password Manager🔏 used to generate Highly secure passwords and Store them to local storage in a encrypted form. To decrypt Passwords later we use a user defined key🔑.
 
 # Utility:-
