@@ -1,5 +1,6 @@
 # PasswordMan:- 
 ##### Password Man is a PHP based password Manager🔏 used to generate Highly secure passwords and Store them to local storage in a encrypted form. To decrypt Passwords later we use a user defined key🔑.
+### Time i spent making PasswordMan- ![CPP_ProblemsDSA](https://wakatime.com/badge/user/62850a07-caf8-470f-86a7-660093b4f5b4/project/82748933-621e-4af3-abfd-0bfff304fd99.svg)
 
 # Utility:-
 
