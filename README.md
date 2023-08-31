@@ -53,4 +53,4 @@ But before making a new Contribution, i request you to visit Contribution.md for
 
 # Thanks!
 
-Feel free to contact me in case of any problems or suggestions at [Here](https://ashutosh7i.me)
+Feel free to contact me in case of any problems or suggestions at [Here](https://ashutosh7i.dev)
